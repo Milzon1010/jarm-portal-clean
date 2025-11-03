@@ -154,8 +154,8 @@ const INDIVIDUAL_CERTS: Cert[] = [
     },
   },
   {
-    key: "pmp",
-    status: "Eligible 35hrs PDU (exam planned)",
+    key: "PMP",
+    status: "Planned",
     id: {
       title: "PMP® Exam Readiness (Planned)",
       issuer: "PMI / Training Providers",
