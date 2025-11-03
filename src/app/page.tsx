@@ -1,16 +1,61 @@
-"use client";
-import Link from "next/link";
-import { URLS } from "@/lib/urls";
+// src/app/page.tsx
+import Hero from "@/components/ui/Hero";
+import KBLI from "@/components/ui/KBLI";
+import Capabilities from "@/components/ui/Capabilities";
+import Certs from "@/components/ui/Certs";
+import Tools from "@/components/ui/Tools";
+import News from "@/components/ui/News";
+import Articles from "@/components/ui/Articles";
+import CTA from "@/components/ui/CTA";
+import ContactSignature from "@/components/ui/Contact";
 
-export default function Page() {
+export default function Home() {
+  const isEN = false;
+
   return (
-    <main className="min-h-dvh flex flex-col items-center justify-center gap-6 p-6">
-      <h1 className="text-3xl font-bold">JARM Portal</h1>
-      <p className="max-w-xl text-center">Products • Services • Demos</p>
-      <div className="flex gap-3">
-        <Link href={URLS.company} className="px-4 py-2 rounded bg-black text-white">Company</Link>
-        <Link href={URLS.lab} className="px-4 py-2 rounded border">Milzon AI Lab</Link>
-      </div>
+    <main className="bg-slate-950 text-slate-100">
+      {/* HERO full-bleed sudah di dalam komponen */}
+      <Hero isEN={isEN} />
+
+      {/* LEGAL / KBLI */}
+      <section id="legal" className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 lg:mt-16">
+        <KBLI isEN={isEN} />
+      </section>
+
+      {/* CAPABILITIES */}
+      <section id="capabilities" className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 lg:mt-16">
+        <Capabilities isEN={isEN} />
+      </section>
+
+      {/* CERTS */}
+      <section id="certs" className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 lg:mt-16">
+        <Certs isEN={isEN} />
+      </section>
+
+      {/* TOOLS */}
+      <section id="tools" className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 lg:mt-16">
+        <Tools isEN={isEN} />
+      </section>
+
+      {/* NEWS */}
+      <section id="news" className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 lg:mt-16">
+        <News isEN={isEN} />
+      </section>
+
+      {/* ARTICLES */}
+      <section id="articles" className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 lg:mt-16">
+        <Articles isEN={isEN} />
+      </section>
+
+      {/* CTA */}
+      <section id="cta" className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 lg:mt-16">
+        <CTA isEN={isEN} />
+      </section>
+
+      {/* CONTACT / SIGNATURE */}
+      <section id="contact" className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 lg:mt-20 mb-24">
+        <ContactSignature isEN={isEN} />
+      </section>
     </main>
   );
 }

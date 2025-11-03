@@ -1,11 +1,20 @@
+// root layout – tidak ada logika bahasa di sini, Nav yang handle toggle
 import "./globals.css";
+import type { Metadata } from "next";
+import Nav from "@/components/Nav";
 
-export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://jarm.allanraytechsight.co.id"),
-  title: "JARM Portal",
-  description: "Products • Services • Demos"
+export const metadata: Metadata = {
+  title: "JARM TechSight — Allanray",
+  description: "AI × IoT × Data — For Measurable Outcomes",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body>{children}</body></html>;
+  return (
+    <html lang="id" className="bg-slate-950">
+      <body className="min-h-dvh text-slate-100 antialiased">
+        <Nav />
+        {children}
+      </body>
+    </html>
+  );
 }

@@ -1,0 +1,5 @@
+id,name,email,created_at,status,amount
+1,Jane Doe,jane@example.com,2025-10-12,active,1200000
+2,John Doe,john@example.com,2025-10-14,inactive,1.750.000
+3,Álvaro Núñez,alvaro@example.es,2025/10/15,Active,Rp 950.000
+4,,missing@example.com,,,
