@@ -1,5 +1,6 @@
 "use client";
 
+import { COMPANY_PAGE_URL, LAB_URL } from "@/lib/urls";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -15,18 +16,27 @@ export default function Nav() {
       href={href}
       className="block px-3 py-2 text-sm md:text-[15px] text-slate-200/90 hover:text-white"
       onClick={() => setOpen(false)}
+      prefetch={false}
     >
       {label}
     </Link>
   );
 
+  const aExt = (href: string, label: string) => (
+    <a
+      href={href}
+      className="block px-3 py-2 text-sm md:text-[15px] text-slate-200/90 hover:text-white"
+      onClick={() => setOpen(false)}
+    >
+      {label}
+    </a>
+  );
+
   return (
     <header className="sticky top-0 z-40 w-full border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-md">
-      {/* tinggi header disesuaikan agar logo 92x92 muat di desktop */}
       <nav className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 md:h-16 lg:h-24 flex items-center justify-between">
         {/* Brand */}
-        <Link href={isEN ? "/en" : "/"} className="flex items-center gap-3">
-          {/* Render logo 92×92 di desktop, otomatis dikecilkan di mobile */}
+        <Link href={isEN ? "/en" : "/"} className="flex items-center gap-3" prefetch={false}>
           <Image
             src="/logo-allanray.png"
             alt="Allanray TechSight"
@@ -42,10 +52,13 @@ export default function Nav() {
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-6">
-          {link(isEN ? "/en/company" : "/company", "Company")}
-          {link(isEN ? "/en#projects" : "#projects", isEN ? "Lab / Portfolio" : "Lab / Portfolio")}
+          {/* EXTERNAL: selalu ke www.../company */}
+          {aExt("https://lab.allanraytechsight.co.id", "Lab / Portfolio")}
+          {/* EXTERNAL: selalu ke lab subdomain */}
+          {aExt(LAB_URL, "Lab / Portfolio")}
+          {/* INTERNAL dalam repo ini (biarkan) */}
           {link(isEN ? "/en#jarm" : "#jarm", "JARM Portal")}
-          {link(isEN ? "/en#contact" : "#contact", isEN ? "Contact" : "Contact")}
+          {link(isEN ? "/en#contact" : "#contact", "Contact")}
         </div>
 
         {/* Language segmented pill */}
@@ -61,6 +74,7 @@ export default function Nav() {
             className={`px-3 py-1.5 text-xs font-medium rounded-lg ${
               !isEN ? "bg-slate-200 text-slate-900" : "text-slate-200 hover:text-white"
             }`}
+            prefetch={false}
           >
             ID
           </Link>
@@ -71,6 +85,7 @@ export default function Nav() {
             className={`px-3 py-1.5 text-xs font-medium rounded-lg ${
               isEN ? "bg-slate-200 text-slate-900" : "text-slate-200 hover:text-white"
             }`}
+            prefetch={false}
           >
             EN
           </Link>
@@ -102,10 +117,12 @@ export default function Nav() {
         } transition-all duration-300`}
       >
         <div className="px-4 pt-2 pb-3">
-          {link(isEN ? "/en/company" : "/company", "Company")}
-          {link(isEN ? "/en#projects" : "#projects", isEN ? "Lab / Portfolio" : "Lab / Portfolio")}
+          {/* EXTERNAL (mobile) */}
+          {aExt(COMPANY_PAGE_URL, "Company")}
+          {aExt("https://lab.allanraytechsight.co.id", "Lab / Portfolio")}
+          {/* INTERNAL (mobile) */}
           {link(isEN ? "/en#jarm" : "#jarm", "JARM Portal")}
-          {link(isEN ? "/en#contact" : "#contact", isEN ? "Contact" : "Contact")}
+          {link(isEN ? "/en#contact" : "#contact", "Contact")}
 
           <div
             role="tablist"
@@ -120,6 +137,7 @@ export default function Nav() {
                 !isEN ? "bg-slate-200 text-slate-900" : "text-slate-200 hover:text-white"
               }`}
               onClick={() => setOpen(false)}
+              prefetch={false}
             >
               ID
             </Link>
@@ -131,6 +149,7 @@ export default function Nav() {
                 isEN ? "bg-slate-200 text-slate-900" : "text-slate-200 hover:text-white"
               }`}
               onClick={() => setOpen(false)}
+              prefetch={false}
             >
               EN
             </Link>

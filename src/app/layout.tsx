@@ -2,6 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
+import BackBar from "@/components/ui/BackBar";
 
 export const metadata: Metadata = {
   title: "JARM TechSight — Allanray",
@@ -13,6 +14,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="id" className="bg-slate-950">
       <body className="min-h-dvh text-slate-100 antialiased">
         <Nav />
+        {/* BackBar default fallback → https://www.allanraytechsight.co.id/company */}
+        <BackBar />
         {children}
       </body>
     </html>
