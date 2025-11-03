@@ -99,7 +99,7 @@ const INDIVIDUAL_CERTS: Cert[] = [
   },
   {
     key: "aws-saa",
-    status: "On-going",
+    status: "Active",
     id: {
       title: "AWS Solutions Architect – Associate (On-going)",
       issuer: "Amazon Web Services",
@@ -113,15 +113,15 @@ const INDIVIDUAL_CERTS: Cert[] = [
   },
   {
     key: "tf-dev",
-    status: "On-going",
+    status: "Active",
     id: {
-      title: "TensorFlow Developer Specialization (On-going)",
-      issuer: "DeepLearning.AI / Coursera",
+      title: "TensorFlow Developer Specialization",
+      issuer: "DeepLearning.AI",
       notes: "NLP/vision basics & time-series; model ringan untuk IoT.",
     },
     en: {
-      title: "TensorFlow Developer Specialization (On-going)",
-      issuer: "DeepLearning.AI / Coursera",
+      title: "TensorFlow Developer Specialization",
+      issuer: "DeepLearning.AI",
       notes: "NLP/vision basics & time-series; lightweight IoT models.",
     },
   },
@@ -139,9 +139,23 @@ const INDIVIDUAL_CERTS: Cert[] = [
       notes: "Statistics, visualization, inference; applied foundation.",
     },
   },
+   {
+    key: "BNSP",
+    status: "On-going",
+    id: {
+      title: "Data Science (On-going)",
+      issuer: "bnspsertifikasi.id (BNSP)",
+      notes: "Statistika, visualisasi, inference; applied foundation.",
+    },
+    en: {
+      title: "Data Science (On-going)",
+      issuer: "bnspsertifikasi.id (BNSP)",
+      notes: "Statistics, visualization, inference; applied foundation.",
+    },
+  },
   {
     key: "pmp",
-    status: "Planned",
+    status: "Eligible 35hrs PDU (exam planned)",
     id: {
       title: "PMP® Exam Readiness (Planned)",
       issuer: "PMI / Training Providers",
